@@ -1,0 +1,58 @@
+[
+    { 
+        "id": 1, 
+        "title" :"Зеленая миля", 
+        "data": "6 июня", 
+        "place": "Arman Asia Park", 
+        "price" :"от 2000тг", 
+        "poster" : "https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/4057c4b8-8208-4a04-b169-26b0661453e3/300x450"
+    },
+    {
+        "id": 2, 
+        "title" :"Побег из Шоушенка", 
+        "data": "7 июня", 
+        "place": "Arman Asia Park", 
+        "price" :"от 2000тг", 
+        "poster":"https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/0b76b2a2-d1c7-4f04-a284-80ff7bb709a4/300x450"
+    },
+    {
+        "id": 3, 
+        "title":"Матрица", 
+        "data": "8 июня", 
+        "place": "Arman Asia Park", 
+        "price": "от 2000тг", 
+        "poster": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/eed1de3a-5400-43b3-839e-22490389bf54/300x450"
+    },
+    {
+        "id": 4, 
+        "title" :"Креминальное чтиво", 
+        "data": "7 июня", 
+        "place":"Arman Asia Park", 
+        "price":"от 2000тг", 
+        "poster":"https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/87b5659d-a159-4224-9bff-d5a5d109a53b/300x450"
+    },
+    {
+        "id": 5, 
+        "title" :"Ветер крепчает", 
+        "data": "5 июня", 
+        "place":"Arman Asia Park", 
+        "price":"от 2000тг", 
+        "poster":"https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/3c9f202b-f25f-4d64-a088-b67d49477de2/300x450"
+    },
+    {
+        "id": 6, 
+        "title" :"Форма голоса", 
+        "data": "9 июня", 
+        "place":"Arman Asia Park", 
+        "price":"от 2000тг", 
+        "poster":"https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/dedeffc1-445f-46aa-b9a4-0afa0d36f3a3/300x450"
+    },
+    {
+        "id": 7, 
+        "title" :"Форрест Гамп", 
+        "data": "9 июня", 
+        "place":"Arman Asia Park", 
+        "price":"от 2000тг", 
+        "poster":"https://avatars.mds.yandex.net/get-kinopoisk-image/1599028/3560b757-9b95-45ec-af8c-623972370f9d/300x450"
+    }
+]

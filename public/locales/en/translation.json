@@ -1,0 +1,28 @@
+{
+    "auth": {
+        "log in": "Log in",
+        "sign up": "Sign up",
+        "username": "Username",
+        "password": "Password",
+        "rememberMe": "Remember me",
+        "forgotPassword": "Forgot password",
+        "registration": "Registration",
+        "emptyUsernameError": "Please input your Username!",
+        "emptyPasswordError": "Please input your Password!"
+    },
+    "description1": {
+        "part1": "Edit and save to reload.",
+        "part2": "Learn Vue"
+    },
+    "eventTypes": [
+        "Movie", "Theater", "Concert", "For Kids", "Sport", "Karavan Saray", "Tours", "Master-classes", "Entertainments", "Museums"
+    ],
+    "searchInput": {
+        "button": "Search",
+        "placeholder": "Search concert, movie and etc"
+    },
+    "citiesList": [
+        "Nur-Sultan", "Almaty", "Kokshetau", "Aktau", "Atyrau", "Aktobe", "Shymkent", "Turkistan", "Pavlodar"
+    ]
+    
+}
