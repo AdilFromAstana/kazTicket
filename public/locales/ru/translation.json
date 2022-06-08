@@ -1,5 +1,6 @@
 {
     "auth": {
+        "myProfile": "My profile",
         "log in": "Войти",
         "sign up": "Регистарация",
         "username": "Логин",
@@ -9,6 +10,11 @@
         "registration": "Регистарация",
         "emptyUsernameError": "Пожалуйста введите свой логин!",
         "emptyPasswordError": "Пожалуйста введите свой пароль!"
+    },
+    "menu": {
+        "selectLanguage": "Выбрать язык",
+        "selectCity": "Выбрать город",
+        "selectEventTypes": "Выбрать событие"
     },
     "description1": {
         "part1": "Edit and save to reload.",

@@ -3,17 +3,22 @@ import { Button, Checkbox, Form, Input } from 'antd';
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import {useDispatch, useSelector} from 'react-redux';
-import { AuthActionCreator } from '../store/reducers/auth/actionCreator';
+import { useNavigate } from 'react-router-dom';
+import { AuthActionCreator } from '../store/reducers/auth/authActionCreator';
+import { SHOP_ROUTE } from '../utils/consts';
 
 const LoginForm = () => {
 
     const dispatch = useDispatch();
+    const navigate = useNavigate();
     const {t} = useTranslation();
     const {error, isLoading} = useSelector(state=>state.auth)
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    
     const submit = () => {
-        dispatch(AuthActionCreator.login(username, password))
+        dispatch(AuthActionCreator.login(username, password));
+        navigate(SHOP_ROUTE)
     }
  
     return (

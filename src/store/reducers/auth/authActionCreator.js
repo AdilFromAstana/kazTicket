@@ -19,7 +19,6 @@ export const AuthActionCreator = {
             } else {
                 dispatch(AuthActionCreator.setError('Некоректный логин или пароль'))
             }
-            console.log(user)
             dispatch(AuthActionCreator.setIsLoading(false));
         } catch (e) {
             dispatch(AuthActionCreator.setError(`Произошла ошибка ${e}`));

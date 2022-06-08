@@ -1,6 +1,7 @@
 [
     { 
         "id": 1, 
+        "type": "Концерты",
         "title" :"Зеленая миля", 
         "data": "6 июня", 
         "place": "Arman Asia Park", 
@@ -9,6 +10,7 @@
     },
     {
         "id": 2, 
+        "type": "Кино",
         "title" :"Побег из Шоушенка", 
         "data": "7 июня", 
         "place": "Arman Asia Park", 
@@ -17,6 +19,7 @@
     },
     {
         "id": 3, 
+        "type": "Кино",
         "title":"Матрица", 
         "data": "8 июня", 
         "place": "Arman Asia Park", 
@@ -25,6 +28,7 @@
     },
     {
         "id": 4, 
+        "type": "Кино",
         "title" :"Креминальное чтиво", 
         "data": "7 июня", 
         "place":"Arman Asia Park", 
@@ -33,6 +37,7 @@
     },
     {
         "id": 5, 
+        "type": "Кино",
         "title" :"Ветер крепчает", 
         "data": "5 июня", 
         "place":"Arman Asia Park", 
@@ -41,6 +46,7 @@
     },
     {
         "id": 6, 
+        "type": "Кино",
         "title" :"Форма голоса", 
         "data": "9 июня", 
         "place":"Arman Asia Park", 
@@ -48,7 +54,8 @@
         "poster":"https://avatars.mds.yandex.net/get-kinopoisk-image/1900788/dedeffc1-445f-46aa-b9a4-0afa0d36f3a3/300x450"
     },
     {
-        "id": 7, 
+        "id": 7,
+        "type": "Кино",
         "title" :"Форрест Гамп", 
         "data": "9 июня", 
         "place":"Arman Asia Park", 

@@ -62,11 +62,12 @@
         color: #f0f0f0;
     }
     .menu{
-        top: 0;
-        z-index: 1000;
-        position: absolute;
+        display: none;
+    }
+    .menuActive {
+        transition: 1s;
+        display: block;
         width: 100vw;
-        height: 100vh;
         background-color: #000;
         opacity: 0.7;
     }
