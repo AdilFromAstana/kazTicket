@@ -7,7 +7,6 @@ const Auth = () => {
         <Layout>
             <Row justify='center' align='middle' className='h100'>
                 <Card>
-                    <h1 style={{display:'flex', justifyContent: 'center'}}>Логин</h1>
                     <LoginForm/>
                 </Card>
             </Row>

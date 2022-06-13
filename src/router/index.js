@@ -1,7 +1,8 @@
-import { BASKET_ROUTE, EVENT_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE } from "../utils/consts"
+import { PROFILE_ROUTE, EVENT_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, TEST_ROUTE } from "../utils/consts"
 import Auth from '../pages/Auth';
-import Basket from '../pages/Basket';
+import Profile from '../pages/Profile';
 import Shop from '../pages/Shop';
+import Test from '../pages/Test';
 import EventPage from "../pages/EventPage";
 
 export const publicRoutes = [
@@ -21,11 +22,15 @@ export const publicRoutes = [
         path: EVENT_ROUTE + '/:id',
         Component: <EventPage/>
     },
+    {
+        path: TEST_ROUTE,
+        Component: <Test/>
+    },
 ]   
 
 export const privateRoutes = [
     {
-        path: BASKET_ROUTE,
-        Component: <Basket/>
+        path: PROFILE_ROUTE,
+        Component: <Profile/>
     },
 ]

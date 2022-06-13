@@ -26,7 +26,7 @@ const EventPage = () => {
                         src={event.poster}
                     />
                 </Col>
-                <Col lg={16} xs={24} style={{margin: '0px', padding: '0px'}}>
+                <Col lg={16} xs={24} style={{margin: '0px', padding: '0px 50px'}}>
                     <Title level={2}>{event.title}</Title>
                     <CalendarTwoTone /> <Text strong>Время проведения:</Text> <Text>{event.data}</Text><br/>
                     <EnvironmentTwoTone /> <Text strong>Место проведения:</Text> <Text>{event.place}</Text><br/>

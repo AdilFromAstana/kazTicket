@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import {useNavigate} from 'react-router-dom';
+import {Link, useNavigate} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 import { Button, Col, Input, Layout, Menu, Row, Select } from 'antd';
-import { BASKET_ROUTE, LOGIN_ROUTE, SHOP_ROUTE } from '../utils/consts';
+import { LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE } from '../utils/consts';
 import { languageInCookie } from '../i18n';
 import { AppstoreOutlined, CloseOutlined, EnvironmentOutlined, LoginOutlined, MailOutlined, MenuOutlined, SearchOutlined, SettingOutlined, TranslationOutlined, UserOutlined } from '@ant-design/icons';
 import { EventTypesActionCreator } from '../store/reducers/eventTypes/eventTypesActionCreator';
+import kazTicketLogo from '../image/Vector.svg'
+import phone from '../image/phone.svg'
 
 const NavBar = () => {
 
+    const { Header } = Layout;
     const {isAuth} = useSelector(state=>state.auth);
     const { Search } = Input;
     const { Option } = Select;
@@ -52,7 +55,7 @@ const NavBar = () => {
             )
         ),
         isAuth 
-        ? getItem(<div onClick={()=>[ navigate(BASKET_ROUTE), setMenuActive(false)]}>{t('auth.myProfile')}</div>, 'sub4', <UserOutlined />) 
+        ? getItem(<div onClick={()=>[ navigate(PROFILE_ROUTE), setMenuActive(false)]}>{t('auth.myProfile')}</div>, 'sub4', <UserOutlined />) 
         : getItem(<div onClick={()=>[ navigate(LOGIN_ROUTE), setMenuActive(false)]}>{t('auth.log in')}</div>, 'sub5', <LoginOutlined />),
     ];
 
@@ -71,10 +74,20 @@ const NavBar = () => {
     };
 
     return (
-        <Layout.Header className='header'>
-            <Row justify="space-between">
+        <Header className='header' 
+            style={{
+                backgroundColor: '#FFFFFF',
+                padding: '0px',
+                height: '40px'
+            }}
+        >
+            <Row 
+                justify="space-between" 
+                style={{
+                }}
+            >
 
-                {/*КНОПКА ПОИСКА*/}
+                {/*КНОПКА ПОИСКА - MOBILE*/}
                 <Col 
                     className='burgerMenu' 
                     xs={4}
@@ -92,7 +105,7 @@ const NavBar = () => {
                         className='navbarLogo'
                         onClick={()=>navigate(SHOP_ROUTE)}
                     >
-                        KAZ TICKET
+                        <img src={kazTicketLogo}/>
                     </h1>
                 </Col>
                 {/*------------------------------------------------*/}
@@ -103,7 +116,6 @@ const NavBar = () => {
                     className='headerSearch'
                 >
                     <Search 
-                        style={{paddingTop: '16px'}}
                         placeholder={t('searchInput.placeholder')}
                         enterButton={t('searchInput.button')}
                         onSearch={onSearch}
@@ -111,29 +123,65 @@ const NavBar = () => {
                 </Col>
                 {/*------------------------------------------------*/}
 
-                {/*ВЫБОР ЯЗЫКА - DESKTOP*/}
+                {/*ТЕЛЕФОН - DESKTOP*/}
                 <Col 
-                    className='headerSearch'
-                    lg={2}
+                    style={{
+                        display: 'flex',
+
+                    }}
                 >
-                    <Select defaultValue={languageInCookie} onChange={handleChange}>
-                        <Option value="ru">Русский</Option>
-                        <Option value="en">English</Option>
-                        <Option value="kz">Қазақша</Option>
-                    </Select>
+                    <img
+                        src={phone}
+                        style={{
+                            width: '16px'
+                        }}
+                    />
+                    <a
+                        style={{
+                            fontSize:'20px',
+                            fontWeight: '600'
+                        }}
+                    >
+                        +7 707 927 75 62
+                    </a>
                 </Col>
                 {/*------------------------------------------------*/}
 
                 {/*КНОПКИ ВХОДА В АККАУНТ*/}
                 <Col 
-                    lg={2} 
                     className='headerSearch'
                 >
                     <Button
-                        onClick={()=>navigate(LOGIN_ROUTE)}
+                        type="primary"
+                        onClick={
+                            ()=>navigate(isAuth ? PROFILE_ROUTE : LOGIN_ROUTE)
+                        }
+                        style={{
+                            width: '120px',
+                            height: '40px',
+                            borderRadius: '10px',
+                            fontSize: '15px',
+                            fontWeight: '700',
+                        }}
                     >   
-                        {t('auth.log in')}
+                        {isAuth ? 'Аккаунт' : t('auth.log in')}
                     </Button>
+                </Col>
+                {/*------------------------------------------------*/}
+
+                {/*ВЫБОР ЯЗЫКА - DESKTOP*/}
+                <Col 
+                    className='headerSearch'
+                >
+                    <Select 
+                        defaultValue={languageInCookie} 
+                        onChange={handleChange} 
+                        style={{width: '30px', height: '30px'}}
+                    >
+                        <Option value="ru">RU</Option>
+                        <Option value="en">EN</Option>
+                        <Option value="kz">KZ</Option>
+                    </Select>
                 </Col>
                 {/*------------------------------------------------*/}
 
@@ -157,24 +205,11 @@ const NavBar = () => {
                     theme='dark'
                     openKeys={openKeys}
                     onOpenChange={onOpenChange}
-                    items={items}
+                    items={menuActive ? items : ''}
                 />
-            {/*------------------------------------------------*/}
+            {/*------------------------------------------------*/}            
 
-            {/*ВЫБОР ГОРОДА
-            <Select
-                size='large'
-                defaultValue="Nur-Sultan"
-                onChange={handleChange}
-                >
-                    {t('citiesList', { returnObjects: true }).map(city=>
-                        <Option key={city} value={city}>{city}</Option>
-                    )}
-            </Select>
-            ------------------------------------------------
-            */}
-
-        </Layout.Header>
+        </Header>
     );
 };
 

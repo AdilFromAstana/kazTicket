@@ -1,9 +1,7 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import Backend from 'i18next-http-backend';
-export const languageInCookie = document.cookie.split('=')[1];
-
-console.log(languageInCookie)
+export const languageInCookie = document.cookie.replace(/(?:(?:^|.*;\s*)userLang\s*\=\s*([^;]*).*$)|^.*$/, "$1");
 
 i18n
   .use(Backend)

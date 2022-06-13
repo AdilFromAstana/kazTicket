@@ -24,6 +24,12 @@
 .login-form-button {
     width: 100%;
 }
+.ant-layout-header{
+    line-height: 40px;
+}
+.ant-row{
+
+}
 
 @media (max-width:992px){
     .navbarLogo{
@@ -47,6 +53,12 @@
     .ant-select-dropdown{
         width: 95% !important;
         min-width: 95% !important;
+    }
+    .ant-tabs-tab{
+        width: 160px;
+    }
+    .ant-tabs-tab-btn{
+        margin: 0px auto;
     }
     .calendar{
         display: none;
@@ -83,12 +95,16 @@
         padding: 0px;
         flex-wrap: wrap;
     }
+    .eventTypes{
+        display: none;
+    }
 }
 
 @media (min-width:992px){
     .layout{
+        background: #F5F5F5;
         margin: auto;
-        max-width: 62.5rem;
+        width: 1180px;
     }
     .events{
         display: flex;
@@ -99,7 +115,7 @@
         display: none;
     }
     .carucel{
-        height: 320px;
+        height: 400px;
         width: 100%;
         color: #fff;
         text-align: center;

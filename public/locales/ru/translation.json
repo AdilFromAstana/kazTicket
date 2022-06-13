@@ -7,7 +7,8 @@
         "password": "Пароль",
         "rememberMe": "Запомнить меня",
         "forgotPassword": "Забыл пароль",
-        "registration": "Регистарация",
+        "login": "Есть аккаунта? Войдите в аккаунт!",
+        "registration": "Нет аккаунта? Зарегистрируйтесь!",
         "emptyUsernameError": "Пожалуйста введите свой логин!",
         "emptyPasswordError": "Пожалуйста введите свой пароль!"
     },
