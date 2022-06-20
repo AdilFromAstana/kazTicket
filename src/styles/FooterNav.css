@@ -1,0 +1,35 @@
+.ant-layout-footer{
+    background-color: #F7F7F7;
+}
+.footer{
+    height: 40px !important;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0px;
+}
+.footerLink{
+    cursor: pointer;
+    color: #3C3D43;
+}
+
+@media (min-width:1200px){
+    .footerLink{
+        margin-right: 80px;
+    }
+}
+@media (max-width:1200px){
+    .footerLink{
+        margin-right: 50px;
+    }
+}
+@media (max-width:992px){
+    .footerLink{
+        margin-right: 30px;
+    }
+}
+@media (max-width:576px){
+    .footer{
+        min-height: 60px;
+    }
+}

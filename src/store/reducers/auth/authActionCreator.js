@@ -31,7 +31,8 @@ export const AuthActionCreator = {
         try{
             dispatch(AuthActionCreator.setIsLoading(true));
             let response = check();
-            if(response){
+            console.log(response)
+            if(response.userName !== ''){
                 dispatch(AuthActionCreator.setIsAuth(true));
                 dispatch(AuthActionCreator.setUser(response.userName));
             }

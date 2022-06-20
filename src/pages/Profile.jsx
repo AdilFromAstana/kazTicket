@@ -1,5 +1,6 @@
-import { Button, Tabs } from 'antd';
+import { Button, DatePicker, Tabs } from 'antd';
 import React from 'react';
+import Calendar from 'react-calendar';
 import { useDispatch } from 'react-redux';
 import { AuthActionCreator } from '../store/reducers/auth/authActionCreator';
 

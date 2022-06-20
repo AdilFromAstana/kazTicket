@@ -4,9 +4,10 @@ import AppRouter from './components/AppRouter';
 import './App.css';
 import NavBar from './components/NavBar';
 import {Layout} from 'antd';
-import { Content, Footer } from 'antd/lib/layout/layout';
+import { Content } from 'antd/lib/layout/layout';
 import { useDispatch } from 'react-redux';
 import { AuthActionCreator } from './store/reducers/auth/authActionCreator';
+import FooterNav from './components/FooterNav';
 
 const App = () => {
 
@@ -19,13 +20,12 @@ const App = () => {
   return (
     <BrowserRouter>
       <Layout className='layout'> 
-        <NavBar className='navbar'/>
+        <NavBar/>
         <Content>
-          <AppRouter className='layout'/>
+          <AppRouter/>
         </Content> 
-        <Footer>
-        </Footer>
       </Layout>
+      <FooterNav/>
     </BrowserRouter>
   );
 };

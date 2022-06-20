@@ -1,0 +1,20 @@
+.afishaTitle{
+    font-weight: 700;
+    font-size: 25px;
+}
+
+@media (min-width:1200px){
+    .afishaTitle{
+        font-size: 45px;
+    }
+}
+@media (max-width:1200px){
+    .afishaTitle{
+        font-size: 35px;
+    }
+}
+@media (max-width:992px){
+    
+}
+@media (max-width:576px){
+}

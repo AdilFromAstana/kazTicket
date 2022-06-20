@@ -1,8 +1,8 @@
-import { PROFILE_ROUTE, EVENT_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, TEST_ROUTE } from "../utils/consts"
+import { PROFILE_ROUTE, EVENT_ROUTE, LOGIN_ROUTE, REGISTRATION_ROUTE, SHOP_ROUTE, CONTACTS_ROUTE } from "../utils/consts"
 import Auth from '../pages/Auth';
 import Profile from '../pages/Profile';
 import Shop from '../pages/Shop';
-import Test from '../pages/Test';
+import Contacts from '../pages/Contacts';
 import EventPage from "../pages/EventPage";
 
 export const publicRoutes = [
@@ -23,8 +23,8 @@ export const publicRoutes = [
         Component: <EventPage/>
     },
     {
-        path: TEST_ROUTE,
-        Component: <Test/>
+        path: CONTACTS_ROUTE,
+        Component: <Contacts/>
     },
 ]   
 

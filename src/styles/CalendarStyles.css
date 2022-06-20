@@ -1,0 +1,36 @@
+.shellInlineCalendar{
+    overflow: hidden;
+    position: relative;
+    display: none;
+}
+.inlineCalendar{
+    align-items: center;
+    display: flex;
+    position: relative;
+    margin: 20px 0px;
+    transition: transform 0.3s ease;
+}
+.calendarDate{
+    margin-right: 6px;
+    cursor: pointer;
+    height: 60px;
+    width: 40px;
+    padding: 0px;
+    text-align: center;
+}
+.calendarDateActive{
+    border-radius: 100px;
+    margin-right: 6px;
+    cursor: pointer;
+    height: 60px;
+    width: 40px;
+    padding: 0px;
+    text-align: center;
+    background-color: rgb(237, 237, 237);
+}
+
+@media (min-width:1200px){
+    .shellInlineCalendar{
+        display: block;
+    }
+}

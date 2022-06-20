@@ -16,7 +16,7 @@ const EventPage = () => {
     }, [])
 
     return (
-        <div style={{margin: '0px', padding: '0px 10px'}}>
+        <div className='h100' style={{margin: '0px', padding: '0px'}}>
             <Row gutter={[40, 0]}  style={{margin: '0px', marginTop: '20px', padding: '0px', flexWrap: 'wrap'}} >
 
                 <Col lg={8} xs={24} style={{margin: '0px', padding: '0px'}}>

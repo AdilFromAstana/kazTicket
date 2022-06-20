@@ -30,6 +30,9 @@
     },
     "citiesList": [
         "Nur-Sultan", "Almaty", "Kokshetau", "Aktau", "Atyrau", "Aktobe", "Shymkent", "Turkistan", "Pavlodar"
+    ],
+    "months": [
+        "Januare", "February", "Mart", "Aprile", "May", "June", "Jule", "August", "September", "October", "November", "December"
     ]
     
 }

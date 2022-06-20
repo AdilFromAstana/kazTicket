@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import {useNavigate} from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
-import { Button, Col, Input, Layout, Menu, Row, Select } from 'antd';
+import { Button, Dropdown, Input, Layout, Menu, Select, Row, Col } from 'antd';
 import { LOGIN_ROUTE, PROFILE_ROUTE, SHOP_ROUTE } from '../utils/consts';
 import { languageInCookie } from '../i18n';
-import { AppstoreOutlined, CloseOutlined, EnvironmentOutlined, LoginOutlined, MailOutlined, MenuOutlined, SearchOutlined, SettingOutlined, TranslationOutlined, UserOutlined } from '@ant-design/icons';
+import { AppstoreOutlined, EnvironmentOutlined, LoginOutlined, TranslationOutlined, UserOutlined } from '@ant-design/icons';
 import { EventTypesActionCreator } from '../store/reducers/eventTypes/eventTypesActionCreator';
-import kazTicketLogo from '../image/Vector.svg'
-import phone from '../image/phone.svg'
+import kazTicketLogo from '../image/Vector.svg';
+import searchIcon from '../image/searchIcon.svg';
+import phoneIcon from '../image/phoneIcon.svg';
+import burgerIcon from '../image/burgerIcon.svg';
+import '../styles/Navbar.css';
 
 const NavBar = () => {
 
@@ -39,6 +42,7 @@ const NavBar = () => {
         };
     };
       
+    //ЭЛЕМЕНТЫ МЕНЮШКИ ДЛЯ ТЕЛЕФОНА - MOBILE
     const items = [
         getItem(t('menu.selectLanguage'), 'sub1', <TranslationOutlined />, [
             getItem(<div onClick={()=>[ setMenuActive(false), handleChange('ru')]}>Русский</div>, 'ru'),
@@ -63,6 +67,7 @@ const NavBar = () => {
 
     const [openKeys, setOpenKeys] = useState([]);
 
+    //ФУНКЦИЯ ОСТАВЛЯЕТ ОТКРЫТЫМ ТОЛЬКО ОДНО ВЫПАДАЮЩЕЕ ОКНО МЕНЮШКИ - MOBILE
     const onOpenChange = (keys) => {
         let latestOpenKey = keys.find((key) => openKeys.indexOf(key) === -1);
 
@@ -73,132 +78,122 @@ const NavBar = () => {
         }
     };
 
+    //
+    const menu = (
+        <Menu
+          items={[
+            {
+              key: 'kz',
+              label: (
+                <div onClick={()=>handleChange('kz')}>
+                    KZ
+                </div>
+              ),
+            },
+            {
+              key: 'en',
+              label: (
+                <div onClick={()=>handleChange('en')}>
+                    EN
+                </div>
+              ),
+            },
+            {
+              key: 'ru',
+              label: (
+                <div onClick={()=>handleChange('ru')}>
+                    RU
+                </div>
+              ),
+            },
+          ]}
+        />
+      );
+
     return (
-        <Header className='header' 
-            style={{
-                backgroundColor: '#FFFFFF',
-                padding: '0px',
-                height: '40px'
-            }}
-        >
-            <Row 
-                justify="space-between" 
-                style={{
-                }}
-            >
-
-                {/*КНОПКА ПОИСКА - MOBILE*/}
-                <Col 
-                    className='burgerMenu' 
-                    xs={4}
-                >
-                    <SearchOutlined />
-                </Col>
-                {/*------------------------------------------------*/}
-
-                {/*TITLE KAZ-TICKET*/}
-                <Col 
-                    lg={4} 
-                >
-                    <h1
-                        style={{color: 'red', cursor:'pointer'}}
-                        className='navbarLogo'
+        <Header className='header' >
+            <Row align='middle' justify='space-between'>
+                {/*ЛОГОТИП KAZ-TICKET*/}
+                <Col>
+                    <img 
+                        src={kazTicketLogo} 
+                        className='menuLogo' 
                         onClick={()=>navigate(SHOP_ROUTE)}
-                    >
-                        <img src={kazTicketLogo}/>
-                    </h1>
+                    />
                 </Col>
-                {/*------------------------------------------------*/}
 
-                {/*INPUT*/}
-                <Col 
-                    lg={12} 
-                    className='headerSearch'
-                >
+                {/*ПОИСК - DESKTOP*/}
+                <Col xl={9} className='searchInputCol'>
                     <Search 
+                        className='searchInput'
                         placeholder={t('searchInput.placeholder')}
-                        enterButton={t('searchInput.button')}
+                        //enterButton={t('searchInput.button')}
                         onSearch={onSearch}
                     />
                 </Col>
-                {/*------------------------------------------------*/}
 
-                {/*ТЕЛЕФОН - DESKTOP*/}
-                <Col 
-                    style={{
-                        display: 'flex',
+                <Col xl={9} lg={6} sm={10} xs={8} style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center'}}>
+                    <img src={searchIcon} alt='searchIcon' className='searchIcon'/>
+                    
+                    {/*НОМЕР ТЕЛЕФОНА - DESKTOP*/}
+                    <div className='contact'>
+                        <img
+                            src={phoneIcon}
+                            className='phoneIcon'
+                        />
+                        <span
+                            className='phoneNumber'
+                        >
+                            +7 707 927 75 62
+                        </span>
+                    </div>
 
-                    }}
-                >
-                    <img
-                        src={phone}
-                        style={{
-                            width: '16px'
-                        }}
-                    />
-                    <a
-                        style={{
-                            fontSize:'20px',
-                            fontWeight: '600'
-                        }}
-                    >
-                        +7 707 927 75 62
-                    </a>
-                </Col>
-                {/*------------------------------------------------*/}
-
-                {/*КНОПКИ ВХОДА В АККАУНТ*/}
-                <Col 
-                    className='headerSearch'
-                >
+                {/*КНОПКА ВХОДА - DESKTOP*/}
                     <Button
                         type="primary"
                         onClick={
                             ()=>navigate(isAuth ? PROFILE_ROUTE : LOGIN_ROUTE)
                         }
-                        style={{
-                            width: '120px',
-                            height: '40px',
-                            borderRadius: '10px',
-                            fontSize: '15px',
-                            fontWeight: '700',
-                        }}
+                        className='login'
                     >   
                         {isAuth ? 'Аккаунт' : t('auth.log in')}
                     </Button>
-                </Col>
-                {/*------------------------------------------------*/}
 
                 {/*ВЫБОР ЯЗЫКА - DESKTOP*/}
-                <Col 
-                    className='headerSearch'
-                >
-                    <Select 
-                        defaultValue={languageInCookie} 
-                        onChange={handleChange} 
-                        style={{width: '30px', height: '30px'}}
+                    <Dropdown
+                        trigger={['click']}
+                        overlay={menu}
+                        placement="bottomLeft"
+                        arrow={{
+                            pointAtCenter: true,
+                        }}
                     >
-                        <Option value="ru">RU</Option>
-                        <Option value="en">EN</Option>
-                        <Option value="kz">KZ</Option>
-                    </Select>
+                        <Button
+                            className='selectLanguage'
+                        >
+                            {languageInCookie.toLocaleUpperCase() || 'RU'}
+                        </Button>
+                    </Dropdown>
+
+                    <img src={searchIcon} alt='searchIcon' className='searchIconMobile'/>
+
+                    <img src={phoneIcon} alt='phoneIcon' className='onlyPhoneIcon'/>
+
+                    <img src={burgerIcon} alt='burgerIcon' className='burgerIcon'/>
                 </Col>
                 {/*------------------------------------------------*/}
 
-                {/*МЕНЮ БУРГЕР*/}
+                {/*МЕНЮ БУРГЕР*
                 <Col 
                     className='burgerMenu' 
-                    xs={4}
                 >
                     <span onClick={()=>setMenuActive(!menuActive)}>
                         {menuActive ? <CloseOutlined /> : <MenuOutlined/>}
                     </span>
                 </Col>
-                {/*------------------------------------------------*/}
+                ------------------------------------------------*/
 
-            </Row>
-
-            {/*МЕНЮ БУРГЕР ОТКРЫТЫЙ*/}
+            /*МЕНЮ БУРГЕР ОТКРЫТЫЙ
                 <Menu
                     className={menuActive ? 'menuActive' : 'menu'}
                     mode="inline"
@@ -207,8 +202,8 @@ const NavBar = () => {
                     onOpenChange={onOpenChange}
                     items={menuActive ? items : ''}
                 />
-            {/*------------------------------------------------*/}            
-
+            ------------------------------------------------*/}            
+            </Row>
         </Header>
     );
 };

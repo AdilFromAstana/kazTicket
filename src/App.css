@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap');
 @import '~antd/dist/antd.css';
 
+*{
+    font-family: 'Manrope', sans-serif;
+    font-style: normal;
+}
 .h100{
-    height: calc(100vh - 64px);
+    height: calc(100vh - 112px);
 }
 
 .w{
@@ -24,104 +29,27 @@
 .login-form-button {
     width: 100%;
 }
-.ant-layout-header{
-    line-height: 40px;
-}
-.ant-row{
-
+.layout{
+    background: #FFF;
 }
 
-@media (max-width:992px){
-    .navbarLogo{
-        margin: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    .headerSearch{
-        display: none;
-    }
-    .header{
-        margin: 0px;
-        height: 100%;
-        padding: 0px;
-    }
-    .ant-select-single{
-        padding: 0 10px;
-        width: 100%;
-    }
-    .ant-select-dropdown{
-        width: 95% !important;
-        min-width: 95% !important;
-    }
-    .ant-tabs-tab{
-        width: 160px;
-    }
-    .ant-tabs-tab-btn{
-        margin: 0px auto;
-    }
-    .calendar{
-        display: none;
-    }
-    .events{
-        display: none;
-    }
-    .burgerMenu{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 24px;
-        color: #f0f0f0;
-    }
-    .menu{
-        display: none;
-    }
-    .menuActive {
-        transition: 1s;
-        display: block;
-        width: 100vw;
-        background-color: #000;
-        opacity: 0.7;
-    }
-    .carucel{
-        height: 140px;
-        width: 100%;
-        color: #fff;
-        line-height: 120px;
-        text-align: center;
-    }
-    .eventPage{
-        margin: 0px;
-        padding: 0px;
-        flex-wrap: wrap;
-    }
-    .eventTypes{
-        display: none;
-    }
-}
-
-@media (min-width:992px){
+@media (min-width:1200px){
     .layout{
-        background: #F5F5F5;
-        margin: auto;
-        width: 1180px;
+        padding: 0px 200px;
     }
-    .events{
-        display: flex;
-        justify-content: space-between;
+}
+@media (max-width:1200px){
+    .layout{
+        padding: 0px 30px;
     }
-    .burgerMenu{
-        margin: 0;
-        display: none;
+}
+@media (max-width:992px){
+    .layout{
+        padding: 0px 20px;
     }
-    .carucel{
-        height: 400px;
-        width: 100%;
-        color: #fff;
-        text-align: center;
-    }
-    .eventPage{
-        margin: 0px;
-        padding: 0px;
+}
+@media (max-width:576px){
+    .layout{
+        padding: 0px 10px;
     }
 }

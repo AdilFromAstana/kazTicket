@@ -1,0 +1,151 @@
+.header{
+    background-color: #FFF;
+    padding: 0px;
+}
+@media (min-width:1200px){
+    .menuLogo{
+        width: 170px;
+    }
+    .ant-layout-header{
+        background-color: #FFF;
+    }
+    .ant-row{
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+    }
+    .ant-input{
+        border-radius: 10px !important;
+        background-color: #F7F7F7;
+    }
+    .ant-input-group{
+        display: flex;
+        justify-content: center;
+        height: 100%;
+    }
+    .searchInputCol{
+        display: flex;
+    }
+    .searchInput{
+        height: 40px;
+        border-radius: 10px;
+        background-color: #F5F5F5;
+    }
+    .contact{
+        height: 100%;
+        display: flex;
+    }
+    .phoneIcon{
+        width: 16px;
+    }
+    .phoneNumber{
+        font-size: 20px;
+        font-weight: 600;
+    }
+    .onlyPhoneIcon, .burgerIcon, .searchIconMobile, .searchIcon, .ant-input-group-addon{
+        display: none;
+    }
+    .selectLanguage{
+        background-color: #F3F3F3;
+        align-self: center;
+        padding: 0px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 12px;
+    }
+    .login{
+        width: 120px;
+        height: 40px;
+        border-radius: 10px;
+    }
+    .login span{
+        font-size: 15px;
+        font-weight: 700;
+        color: #FFF;
+    }
+}
+
+@media (max-width:1200px){
+    .searchInputCol{
+        display: none;
+    }
+    .menuLogo{
+        width: 150px;
+    }
+    .selectLanguage{
+        background-color: #F3F3F3;
+        align-self: center;
+        padding: 0px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 12px;
+    }
+    .login{
+        width: 120px;
+        height: 40px;
+        border-radius: 10px;
+    }
+    .login span{
+        font-size: 15px;
+        font-weight: 700;
+        color: #FFF;
+    }
+    .ant-row{
+        display: flex;
+        flex-flow: row wrap;
+        height: 100%;
+    }
+
+
+    .onlyPhoneIcon, .burgerIcon, .searchInput, .phoneNumber, .searchIconMobile{
+        display: none;
+    }
+}
+
+@media (max-width:992px){
+    .selectLanguage{
+        background-color: #F3F3F3;
+        align-self: center;
+        padding: 0px;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        font-size: 10px;
+    }
+    .icons{
+        width: 40vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .menuLogo{
+        width: 110px;
+    }
+}
+
+@media (max-width:576px){
+    .selectLanguage{
+        background-color: #F3F3F3;
+        align-self: center;
+        padding: 0px;
+        width: 21px;
+        height: 21px;
+        border-radius: 50%;
+        font-size: 10px;
+    }
+    .icons{
+        width: 40vw;
+        display: flex;
+        justify-content: space-between;
+    }
+    .menuLogo{
+        width: 110px;
+    }
+    .burgerIcon{
+        display: block;
+    }
+    .searchInput, .login{
+        display: none;
+    }
+}
